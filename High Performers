@@ -1,0 +1,9 @@
+function highPerformers(students) {
+  return students
+    .map(student => ({
+      name: student.name,
+      average: student.scores.reduce((total, score) => total + score, 0) / student.scores.length
+    }))
+    .filter(student => student.average > 90)
+    .map(student => ({ name: student.name, average: Math.round(student.average) }));
+}
